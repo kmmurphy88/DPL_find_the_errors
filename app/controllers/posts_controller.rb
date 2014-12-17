@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:id])
+    @post = Post.new(post_params)
     if @post.save
       redirect_to @post, notice: 'Post was successfully created.'
     else
@@ -33,7 +33,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post
+    # added the '.destroy' method.
+    @post.destroy
     redirect_to posts_url, notice: 'Post was successfully destroyed.'
   end
 

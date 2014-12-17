@@ -20,3 +20,8 @@ group :development do
   gem 'pry-rails'
   gem 'pry-byebug'
 end
+
+group :test do
+  gem 'minitest-reporters'
+  # gem 'mini_backtrace'
+end

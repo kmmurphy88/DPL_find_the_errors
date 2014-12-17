@@ -12,7 +12,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'About', static_pages_about_path %></li>
+        <!--The About path was misnamed, so I deleted the 'static_pages' before about  -->
+        <li><%= link_to 'About', about_path %></li>
         <li><%= link_to 'Posts', posts_path %></li>
         <li><%= link_to 'Tasks', tasks_path %></li>
       </ul>

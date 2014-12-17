@@ -10,13 +10,18 @@
   </thead>
 
   <tbody>
+    <!--@tasks was not a defined varibale. Added an 's' in the controller.  -->
     <% @tasks.each do |task| %>
       <tr>
         <td><%= task.description %></td>
         <td><%= task.priority %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path %></td>
-        <td><%= link_to 'Destroy', task, data: { confirm: 'Are you sure?' } %></td>
+        <!--added the path for show and params  -->
+        <td><%= link_to 'Show', task_path(task) %></td>
+        <!--Added the id to the edit task path below (task)  -->
+        <td><%= link_to 'Edit', edit_task_path(task.id) %></td>
+        <!--  -->
+        <td><%= link_to 'Destroy', task_path(task), method: :delete,
+            data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
